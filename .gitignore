@@ -67,3 +67,8 @@ GKlib
 # macOS Finder droppings
 .DS_Store
 
+### Project specific
+CMakeUserPresets.json
+
+.qtcreator/
+
