@@ -28,16 +28,16 @@ endif ()
 include(CMakeDependentOption)
 include(FeatureSummary)
 
-option(METIS_TESTS "METIS: Build unit tests" ${PROJECT_IS_TOP_LEVEL})
-option(METIS_SHARED_LIBS "METIS: Build as a shared library" ${PROJECT_IS_TOP_LEVEL})
-option(METIS_INSTALL "METIS: Install project" ${PROJECT_IS_TOP_LEVEL})
+option(METIS_TESTS "METIS: Build unit tests" OFF)
+option(METIS_SHARED_LIBS "METIS: Build as a shared library" ${CMAKE_BUILD_SHARED})
+option(METIS_INSTALL "METIS: Install project" ON)
 option(METIS_OpenMP "METIS: Enable OpenMP support" OFF)
 add_feature_info(METIS_OpenMP METIS_OpenMP "OpenMP support")
 option(METIS_PROGRAMS "METIS: Build executable programs" OFF)
 add_feature_info(METIS_PROGRAMS METIS_PROGRAMS "Build executable programs")
 option(METIS_IDX64 "METIS: Build with 64 bit ints" OFF)
 add_feature_info(METIS_IDX64 METIS_IDX64 "Build with 64 bit ints")
-option(METIS_REAL64 "METIS: Build with 64 bit floats" OFF)
+option(METIS_REAL64 "METIS: Build with 64 bit floats" ON)
 add_feature_info(METIS_REAL64 METIS_REAL64 "Build with 64 bit floats")
 
 #[==============================================================================================[
@@ -118,8 +118,8 @@ if (METIS_TESTS)
 endif ()
 
 #[==============================================================================================[
-#                                       Install or Export                                       #
-]==============================================================================================]
+#                                       Install or Export
+#]==============================================================================================]
 
 # Installation
 if (METIS_INSTALL)
